@@ -1,4 +1,4 @@
-import { GET_TASKS, LOADING_TASKS } from "../types";
+import { GET_TASKS } from "../types";
 
 const initialState = {
   tasks: null,

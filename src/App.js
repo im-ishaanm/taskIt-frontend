@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Navbar from "./components/Navbar";
 import Tasks from "./components/Tasks";
+import TaskForm from "./components/TaskForm";
 
 // Redux
 import { Provider } from "react-redux";
@@ -12,6 +13,7 @@ export class App extends Component {
       <Provider store={store}>
         <div>
           <Navbar />
+          <TaskForm />
           <Tasks />
         </div>
       </Provider>
