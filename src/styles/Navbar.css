@@ -1,0 +1,22 @@
+.navbar {
+  min-height: 8vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-title {
+  margin-left: 4%;
+}
+
+.nav-links {
+  margin-left: auto;
+  margin-right: 4%;
+  display: flex;
+  list-style: none;
+  align-items: center;
+  justify-content: space-between;
+  width: 12%;
+  font-size: 1.1em;
+}
