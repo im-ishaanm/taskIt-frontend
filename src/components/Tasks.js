@@ -7,30 +7,25 @@ import Task from "./Task";
 // Styles
 import "../styles/Tasks.css";
 
+// Redux
+import { connect } from "react-redux";
+import { getTasks } from "../redux/actions/dataActions";
+
 class Tasks extends Component {
   state = {
     tasks: null,
   };
 
   componentDidMount() {
-    axios
-      .get("/tasks")
-      .then((res) => {
-        console.log(res.data);
-        this.setState({
-          tasks: res.data,
-        });
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    this.props.getTasks();
   }
 
   render() {
+    const { tasks } = this.props.data;
     // TODO: Loading animation
 
-    let tasksMarkup = this.state.tasks ? (
-      this.state.tasks.map((task) => <Task key={task.taskId} task={task} />)
+    let tasksMarkup = tasks ? (
+      tasks.map((task) => <Task key={task.taskId} task={task} />)
     ) : (
       <p>Loading...</p>
     );
@@ -44,4 +39,8 @@ class Tasks extends Component {
   }
 }
 
-export default Tasks;
+const mapStateToProps = (state) => ({
+  data: state.data,
+});
+
+export default connect(mapStateToProps, { getTasks })(Tasks);

@@ -59,10 +59,6 @@
 .line-2 {
   margin-top: 8px;
   font-size: 0.8em;
-  width: 18%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
 }
 
 .delete-btn {
@@ -79,6 +75,7 @@
   border: 1px solid #00bbf9;
   border-radius: 40px;
   background: #ffffff;
+  margin-left: 20px;
 }
 
 .edit-btn:hover {
