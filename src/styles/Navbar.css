@@ -20,3 +20,40 @@
   width: 12%;
   font-size: 1.1em;
 }
+
+@media only screen and (max-width: 1054px) {
+  .nav-links {
+    margin-right: 12%;
+    width: 18%;
+  }
+}
+
+@media only screen and (max-width: 780px) {
+  .nav-links {
+    margin-right: 12%;
+    width: 28%;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .nav-links {
+    margin-right: 12%;
+    width: 38%;
+  }
+}
+
+@media only screen and (max-width: 335px) {
+  .nav-links {
+    margin-right: 8px;
+    width: 50%;
+  }
+  .navbar-title {
+    margin-left: 8px;
+  }
+}
+
+@media only screen and (max-width: 300px) {
+  .nav-links {
+    text-align: center;
+  }
+}
