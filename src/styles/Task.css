@@ -62,6 +62,11 @@
   font-size: 0.8em;
 }
 
+.edit-btn {
+  transition-duration: 200ms;
+  transition-timing-function: ease-in-out;
+}
+
 .delete-btn {
   color: #ff595e;
   padding: 2px 8px;
@@ -81,4 +86,14 @@
 
 .edit-btn:hover {
   cursor: pointer;
+}
+
+.delete-btn:hover {
+  background-color: #ff595e;
+  color: white;
+}
+
+.update-btn:hover {
+  background-color: #00bbf9;
+  color: white;
 }
