@@ -3,6 +3,10 @@ import React, { Component } from "react";
 // Styles
 import "../styles/TaskForm.css";
 
+// Redux
+import { connect } from "react-redux";
+import { postTask } from "../redux/actions/dataActions";
+
 class TaskForm extends Component {
   constructor() {
     super();
@@ -15,7 +19,8 @@ class TaskForm extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    console.log(this.state);
+
+    this.props.postTask(this.state);
 
     this.setState({
       label: "",
@@ -76,4 +81,8 @@ class TaskForm extends Component {
   }
 }
 
-export default TaskForm;
+const mapStateToProps = (state) => ({
+  data: state.data,
+});
+
+export default connect(mapStateToProps, { postTask })(TaskForm);
