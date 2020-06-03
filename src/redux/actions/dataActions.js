@@ -1,4 +1,4 @@
-import { GET_TASKS, POST_TASK, DELETE_TASK } from "../types";
+import { GET_TASKS, POST_TASK, DELETE_TASK, EDIT_TASK } from "../types";
 import axios from "axios";
 
 export const getTasks = () => (dispatch) => {
@@ -34,6 +34,20 @@ export const deleteTask = (taskId) => (dispatch) => {
     .delete(`/task/${taskId}`)
     .then(() => {
       dispatch({ type: DELETE_TASK, payload: taskId });
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
+
+export const editTask = (taskData, taskId) => (dispatch) => {
+  axios
+    .post(`/updatetask/${taskId}`, taskData)
+    .then((res) => {
+      dispatch({
+        type: EDIT_TASK,
+        payload: res.data,
+      });
     })
     .catch((err) => {
       console.log(err);

@@ -20,6 +20,11 @@
   outline: none;
 }
 
+.update-form {
+  display: flex;
+  flex-direction: column;
+}
+
 #task-label,
 #task-body {
   transition-duration: 300ms;
@@ -71,5 +76,5 @@ label {
   color: #00bbf9;
 }
 #create-task-btn:active {
-  transform: translateY(40px);
+  transform: translateY(8px);
 }

@@ -38,7 +38,7 @@ class TaskForm extends Component {
     return (
       <div>
         <form
-          autocomplete="off"
+          autoComplete="off"
           onSubmit={this.handleSubmit}
           className="task-form"
         >

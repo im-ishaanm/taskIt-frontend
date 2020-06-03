@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import dayjs from "dayjs";
 
 import DeleteTask from "./DeleteTask";
-import UpdateTask from "./UpdateTask";
+import UpdateTask from "./UpdateTask.js";
 
 // Styles
 import "../styles/Task.css";
