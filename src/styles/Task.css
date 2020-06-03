@@ -60,11 +60,13 @@
 .line-2 {
   margin-top: 8px;
   font-size: 0.8em;
+  display: flex;
 }
 
 .edit-btn {
   transition-duration: 200ms;
   transition-timing-function: ease-in-out;
+  outline: none;
 }
 
 .delete-btn {
@@ -73,6 +75,7 @@
   border: 1px solid #ff595e;
   border-radius: 40px;
   background: #ffffff;
+  margin-left: 12px;
 }
 
 .update-btn {
@@ -81,7 +84,6 @@
   border: 1px solid #00bbf9;
   border-radius: 40px;
   background: #ffffff;
-  margin-left: 20px;
 }
 
 .edit-btn:hover {

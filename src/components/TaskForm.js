@@ -19,7 +19,6 @@ class TaskForm extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-
     this.props.postTask(this.state);
 
     this.setState({
@@ -38,7 +37,11 @@ class TaskForm extends Component {
   render() {
     return (
       <div>
-        <form onSubmit={this.handleSubmit} className="task-form">
+        <form
+          autocomplete="off"
+          onSubmit={this.handleSubmit}
+          className="task-form"
+        >
           <h2 className="create-task-header">Create a Task</h2>
           <label htmlFor="body">Task</label>
           <input

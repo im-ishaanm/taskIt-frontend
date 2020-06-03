@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import dayjs from "dayjs";
 
 import DeleteTask from "./DeleteTask";
+import UpdateTask from "./UpdateTask";
 
 // Styles
 import "../styles/Task.css";
@@ -36,8 +37,8 @@ class Task extends Component {
           </div>
         </div>
         <div className="line-2">
+          <UpdateTask task={this.props.task} />
           <DeleteTask taskId={taskId} />
-          <button className="update-btn edit-btn">Update</button>
         </div>
       </div>
     );
