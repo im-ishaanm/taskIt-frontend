@@ -4,4 +4,4 @@ export const DELETE_TASK = "DELETE_TASK";
 export const EDIT_TASK = "EDIT_TASK";
 
 // Sorting
-export const SORT_BY_INCOMPLETE = "SORT_BY_INCOMPLETE";
+export const SORT_BY = "SORT_BY";

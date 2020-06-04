@@ -3,7 +3,7 @@ import {
   POST_TASK,
   DELETE_TASK,
   EDIT_TASK,
-  SORT_BY_INCOMPLETE,
+  SORT_BY,
 } from "../types";
 
 const initialState = {
@@ -18,6 +18,18 @@ const sortIncomplete = (a, b) => {
   } else {
     return 0;
   }
+};
+
+const sortStatusWrapper = (stat) => {
+  return function sortStatus(a, b) {
+    if (a.status === stat && b.status !== stat) {
+      return -1;
+    } else if (a.status !== stat && b.status === stat) {
+      return 1;
+    } else {
+      return 0;
+    }
+  };
 };
 
 export default function (state = initialState, action) {
@@ -53,10 +65,12 @@ export default function (state = initialState, action) {
         ...state,
       };
 
-    case SORT_BY_INCOMPLETE:
-      console.log(state.tasks);
-      state.tasks.sort(sortIncomplete);
-      console.log(state.tasks);
+    case SORT_BY:
+      if (action.payload === "Incomplete Tasks") {
+        state.tasks.sort(sortIncomplete);
+      } else {
+        state.tasks.sort(sortStatusWrapper(action.payload));
+      }
       return {
         ...state,
       };

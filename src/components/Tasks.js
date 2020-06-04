@@ -8,16 +8,15 @@ import "../styles/Tasks.css";
 
 // Redux
 import { connect } from "react-redux";
-import { getTasks, sortByIncomplete } from "../redux/actions/dataActions";
+import { getTasks, sortBy } from "../redux/actions/dataActions";
 
 class Tasks extends Component {
   componentDidMount() {
     this.props.getTasks();
   }
 
-  handleSortIncomplete = () => {
-    console.log("sorting");
-    this.props.sortByIncomplete();
+  handleSortChange = (e) => {
+    this.props.sortBy(e.target.value);
   };
 
   render() {
@@ -34,12 +33,19 @@ class Tasks extends Component {
       <div className="tasks-container">
         <div className="tasks-header-area">
           <h2 className="mytasks-title">My Tasks</h2>
-          <button
-            onClick={this.handleSortIncomplete}
-            className="show-incomplete"
+          <select
+            onChange={this.handleSortChange}
+            name="status"
+            id="sort-by-dropdown"
           >
-            Sort by Incompleted
-          </button>
+            <option hidden="true" value="Sort By">
+              Sort By
+            </option>
+            <option value="Incomplete Tasks">Incomplete Tasks</option>
+            <option value="New">New Tasks</option>
+            <option value="In Progress">In Progress</option>
+            <option value="Completed">Completed</option>
+          </select>
         </div>
         <div className="tasks-list">{tasksMarkup}</div>
       </div>
@@ -53,7 +59,7 @@ const mapStateToProps = (state) => ({
 
 const mapActionsToProps = {
   getTasks,
-  sortByIncomplete,
+  sortBy,
 };
 
 export default connect(mapStateToProps, mapActionsToProps)(Tasks);

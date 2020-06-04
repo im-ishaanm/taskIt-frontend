@@ -17,16 +17,16 @@ button {
   align-items: center;
 }
 
-.show-incomplete {
+#sort-by-dropdown {
   margin-top: 4px;
   margin-left: 20px;
-  background: #ffffff;
-  border: 1px solid #e63946;
-  padding: 2px 4px;
-  border-radius: 50px;
-  color: #e63946;
-  transition-duration: 200ms;
-  transition-timing-function: ease-in-out;
+  padding: 4px;
+  border: 1px solid #888;
+}
+
+select:active,
+select:hover {
+  outline: none;
 }
 
 .show-incomplete:hover {

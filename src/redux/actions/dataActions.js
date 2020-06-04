@@ -3,7 +3,7 @@ import {
   POST_TASK,
   DELETE_TASK,
   EDIT_TASK,
-  SORT_BY_INCOMPLETE,
+  SORT_BY,
 } from "../types";
 import axios from "axios";
 
@@ -60,8 +60,9 @@ export const editTask = (taskData, taskId) => (dispatch) => {
     });
 };
 
-export const sortByIncomplete = () => (dispatch) => {
+export const sortBy = (sort_type) => (dispatch) => {
   dispatch({
-    type: SORT_BY_INCOMPLETE,
+    type: SORT_BY,
+    payload: sort_type,
   });
 };
