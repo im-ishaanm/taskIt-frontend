@@ -1,0 +1,15 @@
+.about-page {
+  margin-top: 20px;
+  margin-left: 32px;
+}
+ul {
+  list-style: none;
+}
+
+.about-page h4 {
+  margin-top: 22px;
+}
+
+.about-page ul li {
+  margin-left: 12px;
+}
