@@ -6,6 +6,15 @@
   box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.2);
 }
 
+.react-link {
+  text-decoration: none;
+  color: #222;
+}
+
+.react-link-title {
+  margin-left: 4%;
+}
+
 .navbar-title {
   margin-left: 4%;
   color: #00b4d8;

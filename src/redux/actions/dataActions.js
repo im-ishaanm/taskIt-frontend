@@ -1,10 +1,4 @@
-import {
-  GET_TASKS,
-  POST_TASK,
-  DELETE_TASK,
-  EDIT_TASK,
-  DELETE_ALL_COMPLETED,
-} from "../types";
+import { GET_TASKS, POST_TASK, DELETE_TASK, EDIT_TASK } from "../types";
 import axios from "axios";
 
 export const getTasks = () => (dispatch) => {
@@ -58,10 +52,4 @@ export const editTask = (taskData, taskId) => (dispatch) => {
     .catch((err) => {
       console.log(err);
     });
-};
-
-export const deleteAllCompleted = () => (dispatch) => {
-  dispatch({
-    type: DELETE_ALL_COMPLETED,
-  });
 };

@@ -1,10 +1,4 @@
-import {
-  GET_TASKS,
-  POST_TASK,
-  DELETE_TASK,
-  EDIT_TASK,
-  DELETE_ALL_COMPLETED,
-} from "../types";
+import { GET_TASKS, POST_TASK, DELETE_TASK, EDIT_TASK } from "../types";
 
 const initialState = {
   tasks: null,
@@ -38,17 +32,6 @@ export default function (state = initialState, action) {
         (task) => task.taskId === action.payload.taskId
       );
       state.tasks[index_to_update] = action.payload;
-
-      return {
-        ...state,
-      };
-
-    case DELETE_ALL_COMPLETED:
-      state.tasks.map((task, index) => {
-        if (task.status === "Completed") {
-          state.tasks.splice(index, 1);
-        }
-      });
 
       return {
         ...state,
