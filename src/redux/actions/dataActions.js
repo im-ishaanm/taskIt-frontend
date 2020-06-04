@@ -1,4 +1,10 @@
-import { GET_TASKS, POST_TASK, DELETE_TASK, EDIT_TASK } from "../types";
+import {
+  GET_TASKS,
+  POST_TASK,
+  DELETE_TASK,
+  EDIT_TASK,
+  SORT_BY_INCOMPLETE,
+} from "../types";
 import axios from "axios";
 
 export const getTasks = () => (dispatch) => {
@@ -52,4 +58,10 @@ export const editTask = (taskData, taskId) => (dispatch) => {
     .catch((err) => {
       console.log(err);
     });
+};
+
+export const sortByIncomplete = () => (dispatch) => {
+  dispatch({
+    type: SORT_BY_INCOMPLETE,
+  });
 };

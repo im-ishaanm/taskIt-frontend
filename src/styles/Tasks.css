@@ -29,26 +29,8 @@ button {
   transition-timing-function: ease-in-out;
 }
 
-.show-all {
-  margin-top: 4px;
-  margin-left: 20px;
-  background: #ffffff;
-  border: 1px solid #00bbf9;
-  padding: 2px 4px;
-  border-radius: 50px;
-  color: #00bbf9;
-  transition-duration: 200ms;
-  transition-timing-function: ease-in-out;
-}
-
 .show-incomplete:hover {
   cursor: pointer;
   background: #e63946;
-  color: #ffffff;
-}
-
-.show-all:hover {
-  cursor: pointer;
-  background: #00bbf9;
   color: #ffffff;
 }

@@ -1,7 +1,23 @@
-import { GET_TASKS, POST_TASK, DELETE_TASK, EDIT_TASK } from "../types";
+import {
+  GET_TASKS,
+  POST_TASK,
+  DELETE_TASK,
+  EDIT_TASK,
+  SORT_BY_INCOMPLETE,
+} from "../types";
 
 const initialState = {
   tasks: null,
+};
+
+const sortIncomplete = (a, b) => {
+  if (a.status === "Completed" && b.status !== "Completed") {
+    return 1;
+  } else if (a.status !== "Completed" && b.status === "Completed") {
+    return -1;
+  } else {
+    return 0;
+  }
 };
 
 export default function (state = initialState, action) {
@@ -33,6 +49,14 @@ export default function (state = initialState, action) {
       );
       state.tasks[index_to_update] = action.payload;
 
+      return {
+        ...state,
+      };
+
+    case SORT_BY_INCOMPLETE:
+      console.log(state.tasks);
+      state.tasks.sort(sortIncomplete);
+      console.log(state.tasks);
       return {
         ...state,
       };
